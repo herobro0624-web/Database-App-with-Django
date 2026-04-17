@@ -23,3 +23,18 @@ python manage.py collectstatic
 ```python
 python manage.py runserver
 ```
+
+
+## Template usage: smart pluralization
+
+I added a Django template filter `smart_plural` to handle smarter English plural forms (including `Ability -> Abilities`, `Diagnosis -> Diagnoses`, etc.). It's in the app `mythical_mane` under `templatetags`.
+
+Example usage in a template:
+
+```django
+{% load smart_plural %}
+{{ "Ability"|smart_plural }}           {# -> Abilities #}
+{{ model_name|smart_plural:count }}      {# pluralizes only when count != 1 #}
+```
+
+The filter preserves capitalization and includes a short exceptions table; edit `mythical_mane/templatetags/smart_plural.py` to add more irregulars.
