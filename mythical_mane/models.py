@@ -15,6 +15,8 @@ class Ability(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'ability'
+        verbose_name_plural = 'abilities'
         db_table = 'ability'
 
 
@@ -95,6 +97,8 @@ class Diagnosis(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'diagnosis'
+        verbose_name_plural = 'diagnoses'
         db_table = 'diagnosis'
 
 
@@ -155,6 +159,8 @@ class Employee(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'employee'
+        verbose_name_plural = 'employees'
         db_table = 'employee'
 
 
@@ -167,6 +173,8 @@ class Invoice(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'invoice'
+        verbose_name_plural = 'invoices'
         db_table = 'invoice'
 
 
@@ -181,6 +189,8 @@ class LineItem(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'line item'
+        verbose_name_plural = 'line items'
         db_table = 'line_item'
 
 
@@ -194,6 +204,8 @@ class Observation(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'observation'
+        verbose_name_plural = 'observations'
         db_table = 'observation'
 
 
@@ -207,6 +219,8 @@ class Owner(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'owner'
+        verbose_name_plural = 'owners'
         db_table = 'owner'
 
 
@@ -222,6 +236,8 @@ class Patient(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'patient'
+        verbose_name_plural = 'patients'
         db_table = 'patient'
 
 
@@ -232,6 +248,8 @@ class PatientAbility(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'patient ability'
+        verbose_name_plural = 'patient abilities'
         db_table = 'patient_ability'
         unique_together = (('patient', 'ability'),)
 
@@ -245,6 +263,8 @@ class Payment(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'payment'
+        verbose_name_plural = 'payments'
         db_table = 'payment'
 
 
@@ -256,6 +276,8 @@ class ProcedureDefinition(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'procedure definition'
+        verbose_name_plural = 'procedure definitions'
         db_table = 'procedure_definition'
 
 
@@ -265,6 +287,8 @@ class Universe(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'universe'
+        verbose_name_plural = 'universes'
         db_table = 'universe'
 
 
@@ -278,6 +302,8 @@ class Visit(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'visit'
+        verbose_name_plural = 'visits'
         db_table = 'visit'
 
 
@@ -290,6 +316,8 @@ class VisitDiagnosis(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'visit diagnosis'
+        verbose_name_plural = 'visit diagnoses'
         db_table = 'visit_diagnosis'
         unique_together = (('visit', 'diagnosis', 'recorded_at'),)
 
@@ -303,5 +331,7 @@ class VisitProcedure(models.Model):
 
     class Meta:
         managed = False
+        verbose_name = 'visit procedure'
+        verbose_name_plural = 'visit procedures'
         db_table = 'visit_procedure'
         unique_together = (('visit', 'procedure', 'performed_at'),)
