@@ -335,3 +335,17 @@ class VisitProcedure(models.Model):
         verbose_name_plural = 'visit procedures'
         db_table = 'visit_procedure'
         unique_together = (('visit', 'procedure', 'performed_at'),)
+
+
+class CareNote(models.Model):
+    care_note_id = models.BigAutoField(primary_key=True)
+    patient = models.ForeignKey(Patient, models.CASCADE)
+    note = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    follow_up = models.DateField(blank=True, null=True)
+    resolved = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = 'care note'
+        verbose_name_plural = 'care notes'
+        db_table = 'care_note'
